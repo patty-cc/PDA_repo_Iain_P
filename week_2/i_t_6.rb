@@ -13,5 +13,4 @@ def rangers_stadium(hash)
 end
 
 
-
 puts rangers_stadium(teams_stadiums)
