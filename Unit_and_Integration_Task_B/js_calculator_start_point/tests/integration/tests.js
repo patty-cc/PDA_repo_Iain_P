@@ -113,6 +113,8 @@ describe('calculator functionality', function() {
     expect(running_total.getAttribute('value')).to.eventually.equal('299999');
   })
 
+
+// This is what I would expect to happen if a number is divided by zero, it should give back infinity
   it(' should give back infinity if a number is divided by zero', function() {
     running_total = element(by.css('#running_total'));
     element(by.css('#number8')).click();
@@ -120,6 +122,15 @@ describe('calculator functionality', function() {
     element(by.css('#number0')).click();
     element(by.css('#operator_equals')).click();
     expect(running_total.getAttribute('value')).to.eventually.equal('Infinity');
+  })
+
+// This is what I would now expect to happen if a number is divided by zero, with code changed
+    running_total = element(by.css('#running_total'));
+    element(by.css('#number8')).click();
+    element(by.css('#operator_divide')).click();
+    element(by.css('#number0')).click();
+    element(by.css('#operator_equals')).click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('0');
   })
 
 });
