@@ -125,6 +125,7 @@ describe('calculator functionality', function() {
   })
 
 // This is what I would now expect to happen if a number is divided by zero, with code changed
+it(' should give back 0 if a number is divided by zero', function() {
     running_total = element(by.css('#running_total'));
     element(by.css('#number8')).click();
     element(by.css('#operator_divide')).click();
